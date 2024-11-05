@@ -40,4 +40,13 @@ async function Excluir(id_doctor) {
     return { id_doctor };
 };
 
-export default { Listar, Inserir, Editar, Excluir };
+async function ListarServicos(id_doctor) {
+
+    let sql = `select d.id_service, s.description, d.price from doctors_services d JOIN services s on (s.id_service = d.id_service)  WHERE d.id_doctor = ? order by s.description`;
+
+    const serv = await query(sql, [id_doctor]);
+
+    return serv;
+};
+
+export default { Listar, Inserir, Editar, Excluir, ListarServicos };
