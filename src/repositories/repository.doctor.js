@@ -30,4 +30,15 @@ async function Inserir(name, specialty, icon) {
     return doctor[0];
 };
 
-export default { Listar, Inserir };
+async function Editar(id_doctor, name, specialty, icon) {
+
+
+    let sql = `UPDATE doctors SET name=?, specialty=?, icon=? where id_doctor = ?`;
+
+
+    await query(sql, [name, specialty, icon, id_doctor]);
+
+    return { id_doctor };
+};
+
+export default { Listar, Inserir, Editar };
