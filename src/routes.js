@@ -5,6 +5,7 @@ const router = Router();
 
 // Doctors
 router.get("/doctors", controllerDoctor.Listar);
+router.post("/doctors", controllerDoctor.Inserir);
 
 // Users
 

@@ -9,4 +9,19 @@ async function Listar(req, res) {
     res.status(200).json(doctors);
 }
 
-export default { Listar };
+async function Inserir(req, res) {
+
+    /*
+    const name = req.body.name;
+    const specialty = req.body.specialty;
+    const icon = req.body.icon;
+    */
+
+    const {name, specialty, icon} = req.body;
+
+    const doctor = await serviceDoctor.Inserir(name, specialty, icon);
+
+    res.status(201).json(doctor);
+}
+
+export default { Listar, Inserir };
