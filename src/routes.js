@@ -12,6 +12,7 @@ router.delete("/doctors/:id_doctor", controllerDoctor.Excluir);
 
 // Users
 router.post("/users/register", controllerUser.Inserir);
+router.post("/users/login", controllerUser.Login);
 
 // Reservas
 
