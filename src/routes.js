@@ -20,6 +20,7 @@ router.post("/users/login", controllerUser.Login);
 
 // Reservas
 router.get("/appointments", jwt.ValidateToken, controllerAppointment.ListarByUser);
+router.post("/appointments", jwt.ValidateToken, controllerAppointment.Inserir);
 
 
 export default router;

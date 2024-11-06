@@ -18,4 +18,13 @@ async function ListarByUser(id_user) {
     return appointments;
 };
 
-export default { ListarByUser };
+async function Inserir(id_user, id_doctor, id_service, booking_date, booking_hour) {
+
+    let sql = `insert into appointments(id_user, id_doctor, id_service, booking_date, booking_hour) values(?, ?, ?, ?, ?)
+    returning id_appointment`;
+    const appointment = await query(sql, [id_user, id_doctor, id_service, booking_date, booking_hour]);
+
+    return appointment[0];
+};
+
+export default { ListarByUser, Inserir };
