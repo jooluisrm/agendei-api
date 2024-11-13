@@ -1,8 +1,8 @@
 import repositoryAppointment from "../repositories/repository.appointments.js";
 
-async function ListarByUser(id_user) {
+async function Listar(id_user, dt_start, dt_end, id_doctor) {
 
-    const appointments = await repositoryAppointment.ListarByUser(id_user);
+    const appointments = await repositoryAppointment.Listar(id_user, dt_start, dt_end, id_doctor);
     return appointments;
 };
 
@@ -18,4 +18,4 @@ async function Excluir(id_user, id_appointment) {
     return appointment;
 };
 
-export default { ListarByUser, Inserir, Excluir };
+export default { Listar, Inserir, Excluir };
