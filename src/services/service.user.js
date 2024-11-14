@@ -70,4 +70,11 @@ async function LoginAdmin(email, password) {
     }
 };
 
-export default { Inserir, Login, Profile, InserirAdmin, LoginAdmin };
+async function Listar() {
+
+    const users = await repositoryUser.Listar();
+    return users;
+};
+
+
+export default { Inserir, Login, Profile, InserirAdmin, LoginAdmin, Listar };
